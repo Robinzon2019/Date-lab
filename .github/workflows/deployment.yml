@@ -17,6 +17,8 @@ jobs:
         with:
           node-version: 22
           cache: npm
+      - name: Navigate to Test Directory
+        run: cd date-lab-e2e-framework
 
       - name: Instalar dependencias
         run: |
