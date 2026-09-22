@@ -1,0 +1,19 @@
+{
+  "name": "date-lab-e2e",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Framework E2E Playwright + Page Object Model para Date Lab",
+  "scripts": {
+    "test": "npx playwright test",
+    "test:e2e": "npx playwright test",
+    "test:ui": "npx playwright test --ui",
+    "test:headed": "npx playwright test --headed",
+    "test:chrome": "npx playwright test --project=chromium",
+    "test:report": "npx playwright show-report",
+    "install:browsers": "npx playwright install --with-deps"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.55.0"
+  }
+}

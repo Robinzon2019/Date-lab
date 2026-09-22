@@ -17,10 +17,7 @@ export default defineConfig({
         ["html", { open: "never", outputFolder: "playwright-report" }],
         ["junit", { outputFile: "test-results/junit.xml" }],
       ]
-    : [
-        ["list"],
-        ["html", { open: "never", outputFolder: "playwright-report" }],
-      ],
+    : [["list"], ["html", { open: "never", outputFolder: "playwright-report" }]],
   timeout: 30_000,
   expect: { timeout: 5_000 },
   use: {
@@ -34,6 +31,7 @@ export default defineConfig({
   },
   webServer: {
     command: `npm run dev -- --host 127.0.0.1 --port ${PORT} --strictPort`,
+    cwd: "../",
     url: BASE_URL,
     reuseExistingServer: !isCI,
     timeout: 120_000,
