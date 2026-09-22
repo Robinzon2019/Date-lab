@@ -17,6 +17,7 @@ jobs:
         with:
           node-version: 22
           cache: npm
+
       - name: Navigate to Test Directory
         run: cd date-lab-e2e-framework
 
@@ -53,12 +54,14 @@ jobs:
 
   publish-report:
     name: Publicar reporte en GitHub Pages
-    if: always() && github.event_name != 'pull_request' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master')
+    if: always()
     runs-on: ubuntu-latest
     environment:
       name: github-pages
       url: ${{ steps.deploy.outputs.page_url }}
     steps:
+      - name: Navigate to Test Directory
+        run: cd date-lab-e2e-framework
       - name: Descargar reporte
         uses: actions/download-artifact@v4
         with:
